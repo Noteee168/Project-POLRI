@@ -251,44 +251,56 @@ h2 {
 
 .hero-right {
     flex: 0.9;
+    display: flex;
+    justify-content: center;
 }
 
+/* PERBAIKAN UTAMA: STATS CARD JADI RAPIH */
 .stats-card {
     background: white;
     border-radius: 32px;
-    padding: 1.8rem;
+    padding: 2rem;
     box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(0, 0, 0, 0.05);
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem 2rem;
 }
 
 .stat-item {
+    width: 240px;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 15px;
+    justify-content: flex-start;
 }
 
 .stat-icon {
-    font-size: 1.8rem;
+     font-size: 1.8rem;
     color: #0066b3;
     background: #eef2fa;
-    width: 48px;
-    height: 48px;
-    border-radius: 60px;
+
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+
+    border-radius: 50%;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 .stat-info {
     display: flex;
     flex-direction: column;
+    min-width: 120px;
 }
 
 .stat-value {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 800;
     color: #0a2b44;
     line-height: 1.2;
@@ -299,6 +311,7 @@ h2 {
     font-weight: 600;
     color: #5c6f87;
     letter-spacing: 0.3px;
+    text-transform: uppercase;
 }
 
 /* ===== LAYANAN KENDALI ===== */
@@ -621,6 +634,120 @@ h2 {
     color: #7f9abe;
     margin-top: 0.5rem;
 }
+/* ===== LOGIN POPUP ===== */
+
+.login-popup {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.25s ease;
+
+    z-index: 9999;
+}
+
+.login-popup.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-box {
+    background: white;
+    width: 90%;
+    max-width: 380px;
+
+    padding: 2rem;
+    border-radius: 24px;
+
+    text-align: center;
+
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+
+    animation: popupFade 0.25s ease;
+}
+
+.popup-icon {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 1rem;
+
+    border-radius: 50%;
+
+    background: #eef2fa;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #0066b3;
+    font-size: 2rem;
+}
+
+.popup-box h3 {
+    margin-bottom: 0.7rem;
+    color: #0a2b44;
+}
+
+.popup-box p {
+    color: #5c6f87;
+    font-size: 0.95rem;
+
+    margin-bottom: 1.5rem;
+}
+
+.popup-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.popup-buttons button,
+.popup-buttons a {
+    flex: 1;
+
+    border: none;
+    text-decoration: none;
+
+    padding: 0.85rem 1rem;
+
+    border-radius: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.popup-close {
+    background: #eef2fa;
+    color: #0a2b44;
+}
+
+.popup-login {
+    background: #0066b3;
+    color: white;
+}
+
+@keyframes popupFade {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
@@ -631,8 +758,9 @@ h2 {
         width: 100%;
     }
     .stats-card {
-        max-width: 500px;
+        max-width: 550px;
         margin: 0 auto;
+        width: 100%;
     }
     .kontak-wrapper {
         grid-template-columns: 1fr;
@@ -689,5 +817,48 @@ h2 {
     .btn-primary, .btn-outline {
         text-align: center;
         justify-content: center;
+    }
+    
+    /* PERBAIKAN MOBILE: stats card jadi 1 kolom */
+    .stats-card {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+        padding: 1.5rem;
+    }
+    
+    .stat-item {
+        justify-content: flex-start;
+    }
+    
+    .stat-icon {
+        min-width: 48px;
+        width: 48px;
+        height: 48px;
+        font-size: 1.6rem;
+    }
+    
+    .stat-value {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-card {
+        padding: 1.2rem;
+    }
+    
+    .stat-icon {
+        min-width: 42px;
+        width: 42px;
+        height: 42px;
+        font-size: 1.3rem;
+    }
+    
+    .stat-value {
+        font-size: 1.3rem;
+    }
+    
+    .stat-label {
+        font-size: 0.6rem;
     }
 }

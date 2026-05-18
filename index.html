@@ -54,28 +54,36 @@
             <div class="hero-right">
                 <div class="stats-card">
                     <div class="stat-item">
-                        <i class="fas fa-phone-alt stat-icon"></i>
+                        <div class="stat-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
                         <div class="stat-info">
                             <span class="stat-value">110</span>
                             <span class="stat-label">CALL CENTER DARURAT</span>
                         </div>
                     </div>
                     <div class="stat-item">
-                        <i class="fas fa-clock stat-icon"></i>
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
                         <div class="stat-info">
                             <span class="stat-value">24/7</span>
                             <span class="stat-label">LAYANAN ONLINE</span>
                         </div>
                     </div>
                     <div class="stat-item">
-                        <i class="fas fa-building stat-icon"></i>
+                        <div class="stat-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
                         <div class="stat-info">
                             <span class="stat-value">34</span>
                             <span class="stat-label">POLDA DI INDONESIA</span>
                         </div>
                     </div>
                     <div class="stat-item">
-                        <i class="fas fa-check-circle stat-icon"></i>
+                        <div class="stat-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
                         <div class="stat-info">
                             <span class="stat-value">452K+</span>
                             <span class="stat-label">ADUAN DISELESAIKAN</span>
@@ -96,7 +104,9 @@
             </div>
             <div class="cards-grid">
                 <div class="service-card">
-                    <div class="card-icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <div class="card-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
                     <h3>PETA NAVIGASI</h3>
                     <p>Lokasi kantor polisi, rute aman & posko bantuan tersebar.</p>
                     <div class="card-number">01</div>
@@ -184,21 +194,21 @@
                     <h3>PELUNCURAN SISTEM E-TILANG NASIONAL VERSI 3.0</h3>
                     <p>Pembayaran denda telah diakses melalui portal resmi dengan integrasi 12 bank nasional.</p>
                     <div class="berita-meta">12 Des 2026</div>
-                    <a href="#" class="read-more">BACA SELENGKAPNYA <i class="fas fa-arrow-right"></i></a>
+                    <a href="#" class="read-more need-login">BACA SELENGKAPNYA <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="berita-card">
                     <div class="berita-tag">OPERASI</div>
                     <h3>OPERASI LILIN 2025 DIMULAI SERENTAK DI 34 POLDA</h3>
                     <p>Pengamanan menjelang akhir tahun dilakukan dengan total 78.000 personel di seluruh Indonesia.</p>
                     <div class="berita-meta">12 Des 2026</div>
-                    <a href="#" class="read-more">BACA SELENGKAPNYA</a>
+                    <a href="#" class="read-more need-login">BACA SELENGKAPNYA <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="berita-card">
                     <div class="berita-tag">EDUKASI</div>
                     <h3>PANDUAN HUKUM LALU LINTAS – EDISI PELAJAR 2025</h3>
                     <p>Materi edukasi gratis untuk sekolah & perguruan tinggi terkait keselamatan berkendara.</p>
                     <div class="berita-meta">01 Des 2026</div>
-                    <a href="#" class="read-more">BACA SELENGKAPNYA</a>
+                    <a href="#" class="read-more need-login">BACA SELENGKAPNYA <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -291,6 +301,34 @@
             </div>
         </div>
     </footer>
+    <!-- LOGIN REQUIRED MODAL -->
+<div class="login-popup" id="loginPopup">
+    <div class="popup-box">
+
+        <div class="popup-icon">
+            <i class="fas fa-lock"></i>
+        </div>
+
+        <h3>Akses Dibatasi</h3>
+
+        <p>
+            Anda harus login terlebih dahulu untuk mengakses layanan ini.
+        </p>
+
+        <div class="popup-buttons">
+
+            <button class="popup-close" onclick="closePopup()">
+                Tutup
+            </button>
+
+            <a href="login.html" class="popup-login">
+                Login
+            </a>
+
+        </div>
+
+    </div>
+</div>
 
     <script src="script.js"></script>
 </body>

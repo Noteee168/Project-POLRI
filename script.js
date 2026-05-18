@@ -307,6 +307,34 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 800);
 });
 
+// Semua elemen yang butuh login
+const protectedElements = document.querySelectorAll(
+    ".service-card, .need-login"
+);
+
+protectedElements.forEach(item => {
+
+    item.addEventListener("click", function(e) {
+
+        e.preventDefault();
+
+        document
+            .getElementById("loginPopup")
+            .classList.add("show");
+
+    });
+
+});
+
+// Tutup popup
+function closePopup() {
+
+    document
+        .getElementById("loginPopup")
+        .classList.remove("show");
+
+}
+
 // Tambahkan style untuk modal dan toast (dynamic)
 const additionalStyles = `
     /* Modal interaktif */
